@@ -57,8 +57,6 @@ public class BuggySearchAndSort {
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == val)
 				return true;
-			else
-				return false;
 		}
 		return false;
 	}
@@ -71,7 +69,7 @@ public class BuggySearchAndSort {
 	 */
 	public static void bubbleSort(int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array.length-1; i++) {
+			for (int j = 0; j < array.length-1; j++) {
 				if (array[j] > array[j+1]) { // swap elements j and j+1
 					int temp = array[j];
 					array[j] = array[j+1];
@@ -87,7 +85,7 @@ public class BuggySearchAndSort {
 	 * the list, then the second-largest in the next to last place, and so on.
 	 */
 	public static void selectionSort(int[] array) {
-		for (int top = array.length - 1; top > 0; top--) {
+		for (int top = array.length - 1; top >= 0; top--) {
 			int positionOfMax = 0;
 			for (int i = 1; i <= top; i++) {
 				if (array[1] > array[positionOfMax])

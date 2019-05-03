@@ -88,7 +88,7 @@ public class BuggySearchAndSort {
 		for (int top = array.length - 1; top >= 0; top--) {
 			int positionOfMax = 0;
 			for (int i = 1; i <= top; i++) {
-				if (array[1] > array[positionOfMax])
+				if (array[i] > array[positionOfMax])
 					positionOfMax = i;
 			}
 			int temp = array[top];  // swap top item with biggest item
@@ -106,12 +106,13 @@ public class BuggySearchAndSort {
 		for (int top = 1; top < array.length; top++) {
 			int temp = array[top];  // copy item that into temp variable
 			int pos = top - 1;
-			while (pos > 0 && array[pos] > temp) {
-				   // move items that are bigger than temp up one position
+			while (pos >= 0 && array[pos] > temp) {
+				// move items that are bigger than temp up one position
 				array[pos+1] = array[pos];
+				array[pos] = temp;  // place temp into last vacated position
 				pos--;
 			}
-			array[pos] = temp;  // place temp into last vacated position
+			
 		}
 	}
 	
